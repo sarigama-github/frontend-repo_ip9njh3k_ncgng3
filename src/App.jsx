@@ -1,26 +1,38 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Skills from './components/Skills'
+import Projects from './components/Projects'
+import Visualizations from './components/Visualizations'
+import Experience from './components/Experience'
+import Certifications from './components/Certifications'
+import Contact from './components/Contact'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
+    <div className="min-h-screen bg-[#060712] text-white selection:bg-cyan-500/40 selection:text-white">
+      <div className="pointer-events-none fixed inset-0 opacity-20" aria-hidden>
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_0_49%,rgba(255,255,255,.06)_50%,transparent_51%)] bg-[length:4px_100%]" />
       </div>
+
+      <Navbar />
+      <main className="relative">
+        <Hero />
+        <Skills />
+        <Projects />
+        <Visualizations />
+        <Experience />
+        <Certifications />
+        <Contact />
+      </main>
+
+      <footer className="relative border-t border-white/10 py-8 mt-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-cyan-100/70 text-sm flex items-center justify-between">
+          <p>© {new Date().getFullYear()} Virgiawan Malik Rizky — Data Intelligence</p>
+          <div className="flex gap-4">
+            <a href="#hero" className="hover:text-cyan-200">Top</a>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
