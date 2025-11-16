@@ -6,10 +6,17 @@ import Visualizations from './components/Visualizations'
 import Experience from './components/Experience'
 import Certifications from './components/Certifications'
 import Contact from './components/Contact'
+import BackgroundFX from './components/BackgroundFX'
+import VisualParallax from './components/VisualParallax'
 
 function App() {
   return (
     <div className="min-h-screen bg-[#060712] text-white selection:bg-cyan-500/40 selection:text-white">
+      {/* Reactive holographic backdrop */}
+      <BackgroundFX />
+      <VisualParallax />
+
+      {/* Subtle vertical grid overlay */}
       <div className="pointer-events-none fixed inset-0 opacity-20" aria-hidden>
         <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_0_49%,rgba(255,255,255,.06)_50%,transparent_51%)] bg-[length:4px_100%]" />
       </div>
